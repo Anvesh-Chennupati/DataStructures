@@ -1,6 +1,6 @@
 // Array rotation using Juggling Algorithm
 
-#include <iostream.h>
+#include <iostream>
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -24,6 +24,7 @@ void rotateArray(int arr[],int n,int d){
     int i,j,k,temp;
     for(i=0;i<gcd(d,n);i++){
         j = i;
+        temp = arr[i];
         while(1){
             k =j + d;
             if(k >=n)
