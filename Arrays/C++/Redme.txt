@@ -1,1 +1,1 @@
-All the array programs and algorithms
+All the array programs and algorithms.
