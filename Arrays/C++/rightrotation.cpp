@@ -1,22 +1,27 @@
-#include<iostream>
-#include<bits/stdc++.h>
-#include<vector>
+#include <stdio.h>
 
+void rotate(int arr[], int n)
+{
+   int x = arr[n-1], i;
+   for (i = n-1; i > 0; i--)
+      arr[i] = arr[i-1];
+   arr[0] = x;
+}
 
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5}, i;
+    int n = sizeof(arr)/sizeof(arr[0]);
 
-using namespace std;
+    printf("Given array is\n");
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
 
+    rotate(arr, n);
 
-int main(){
+    printf("\nRotated array is\n");
+    for (i = 0; i < n; i++)
+        printf("%d ", arr[i]);
 
-    vector <int> v1;
-
-    for (int i = 1; i <= 10; i++)
-        v1.push_back(i * 10);
-
-    cout << "Size : " << v1.size();
-    cout << "\nCapacity : " << v1.capacity();
-    cout << "\nMax_Size : " << v1.max_size();
-
-
+    return 0;
 }
