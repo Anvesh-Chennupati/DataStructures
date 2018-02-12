@@ -167,10 +167,10 @@ int main(){
                                 switch (che) {
                                 case 1: {
                                         struct node * nex = new node();
-                                        nex = head->next;
-                                        head= nex;
-                                        cout<<"\n I am here";
-
+                                        nex = head;
+                                        head =head->next;
+                                        free(nex);
+                                        
                                 } break;
                                 case 2: {
                                         struct node * tra = new node();
