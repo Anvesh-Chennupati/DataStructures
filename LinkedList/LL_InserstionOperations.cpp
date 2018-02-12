@@ -160,9 +160,9 @@ int main(){
                         }
                         else{
                                 int che;
-                                cout<<"\n 1.Delete from the beginning";
-                                cout<<"\n 2.Delete from the end";
-                                cout<<"\n 3.Delete from a specific location";
+                                cout<<"\n 1.Delete from the beginning :";
+                                cout<<"\n 2.Delete from the end :";
+                                cout<<"\n 3.Delete from a specific location :";
                                 cin>>che;
                                 switch (che) {
                                 case 1: {
@@ -170,18 +170,22 @@ int main(){
                                         nex = head;
                                         head =head->next;
                                         free(nex);
-                                        
                                 } break;
                                 case 2: {
                                         struct node * tra = new node();
                                         struct node * pre = new node();
                                         tra = head;
-                                        while(tra!=NULL) {
+                                        if(tra->next==NULL){
+                                            head = NULL;
+                                        }
+                                        else{
+                                        while(tra->next!=NULL) {
                                                 pre = tra;
                                                 tra = tra->next;
                                         }
-                                        tra = NULL;
+                                        free(tra);
                                         pre->next = NULL;
+                                    }
                                 } break;
                                 case 3: {
                                         cout<<"\n bla"<<endl;
@@ -191,7 +195,7 @@ int main(){
                                 }
                                 }
                         }
-                }
+                }break;
                 case 4: {
                         return 0;
                 }
