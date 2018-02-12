@@ -175,27 +175,42 @@ int main(){
                                         struct node * tra = new node();
                                         struct node * pre = new node();
                                         tra = head;
-                                        if(tra->next==NULL){
-                                            head = NULL;
+                                        if(tra->next==NULL) {
+                                                head = NULL;
                                         }
                                         else{
-                                        while(tra->next!=NULL) {
-                                                pre = tra;
-                                                tra = tra->next;
+                                                while(tra->next!=NULL) {
+                                                        pre = tra;
+                                                        tra = tra->next;
+                                                }
+                                                free(tra);
+                                                pre->next = NULL;
                                         }
-                                        free(tra);
-                                        pre->next = NULL;
-                                    }
                                 } break;
                                 case 3: {
-                                        cout<<"\n bla"<<endl;
+                                        if(head == NULL) {
+                                                cout<<"\n Linked list is empty"<<endl;
+                                        }
+                                        else{
+                                                cout<<"\n";
+                                                struct node * disp = new node();
+                                                disp = head;
+                                                while(disp != NULL) {
+                                                        cout<<"\t "<<disp->data;
+                                                        disp = disp->next;
+                                                }
+                                        }
+                                        cout<<"\n Enter the element you want to delete";
+                                        int elem;
+                                        cin>>elem;
+                                        //I am here;
                                 } break;
                                 default: {
                                         cout<<"\n Invalid Entry"<<endl;
                                 }
                                 }
                         }
-                }break;
+                } break;
                 case 4: {
                         return 0;
                 }
