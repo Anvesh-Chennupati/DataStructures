@@ -166,7 +166,7 @@ int main(){
                                 cin>>che;
                                 switch (che) {
                                 case 1: {
-                                        struct node * nex = new node();
+delb:                                   struct node * nex = new node();
                                         nex = head;
                                         head =head->next;
                                         free(nex);
@@ -203,7 +203,22 @@ int main(){
                                         cout<<"\n Enter the element you want to delete";
                                         int elem;
                                         cin>>elem;
-                                        //I am here;
+                                        node * tra = new node();
+                                        node * prev = new node();
+                                        tra = head;
+                                        prev = tra;
+                                        if(head->data == elem) {
+                                                goto delb;
+                                        }
+                                        else{
+                                                while(tra->next->data!=elem && tra->next!= NULL) {
+                                                        prev = tra;
+                                                        tra = tra->next;
+                                                }
+                                                prev->next = tra->next->next;
+                                        }
+
+
                                 } break;
                                 default: {
                                         cout<<"\n Invalid Entry"<<endl;
